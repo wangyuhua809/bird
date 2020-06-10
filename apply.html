@@ -128,42 +128,37 @@
       }
       function checkUser() {
          var cname = document.getElementById("cname").value;
-         if (cname && cname.length > 3 && cname.length < 41) {
-            var code = document.getElementById("code").value;
-            if (code && code.length > 3 && code.length < 41) {
-               var type = document.getElementById("myselect").value;
-               if (type) {
-                  var pname = document.getElementById("pname").value;
-                  if (pname && pname.length > 1 && pname.length < 20) {
-                     var tel = document.getElementById("tel").value;
-                     var reg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
-                     if (reg.test(tel)) {
-                        var address = document.getElementById("address").value;
-                        if (address && address.length > 7 && address.length < 51) {
-                           return true;
-                        } else {
-                           alert('地址为8到50位字符！');
-                           return false;
-                        }
-                     } else {
-                        alert('电话格式不正确！');
-                        return false;
-                     }
-                  } else {
-                     alert('法人姓名为2到20位字符！');
-                     return false;
-                  }
-               } else {
-                  return false;
-               }
-            } else {
-               alert('组织机构编码为4-50字符！');
-               return false;
-            }
-         } else {
-            alert('公司名称为4-50字符！');
+         if (cname.length < 4 || cname.length > 40) {
+            alert('公司名称为4到50位字符！');
             return false;
          }
+         var code = document.getElementById("code").value;
+         if (!code) {
+            alert('组织机构编码不能为空！');
+            return false;
+         }
+         var type = document.getElementById("myselect").value;
+         if (!type) {
+            alert('企业类型不能为空！');
+            return false;
+         }
+         var pname = document.getElementById("pname").value;
+         if (!pname) {
+            alert('法人姓名不能为空！');
+            return false;
+         }
+         var tel = document.getElementById("tel").value;
+         var reg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+         if (!reg.test(tel)) {
+            alert('电话格式不正确！');
+            return false;
+         }
+         var address = document.getElementById("address").value;
+         if (!address) {
+            alert('地址不能为空！');
+            return false;
+         }
+         return true;
       }
 
    </script>
