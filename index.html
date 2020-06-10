@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+   <title>扫码申请企业</title>
+   <style type="text/css">
+      * {
+         padding: 0rem;
+         margin: 0rem;
+      }
+
+      html {
+         /*谷歌浏览器写62.5%会有一点兼容问题..为了谷歌.改一下倍率吧.*/
+         font-size: 625%;
+         font-family: "微软雅黑";
+      }
+
+      body {
+         /*其实就当16px这么用了.因为设置了625%直接减去两位就可以按px方法做了
+           1rem = 100px
+         */
+         font-size: .16rem;
+      }
+
+      div {
+         /*box-sizing:border-box;设置了边框也没有把DIV变大,太棒了~*/
+         box-sizing: border-box;
+      }
+
+      .img-top {
+         width: 100%;
+         height: 4rem;
+      }
+
+      p {
+         font-size: .13rem;
+         text-align: center;
+      }
+
+      .circle-box {
+         display: flex;
+         justify-content: space-around;
+         text-align: center;
+         font-size: .16rem;
+         margin-top: 4%;
+      }
+
+      span {
+         font-weight: bold;
+      }
+
+      .circle-left {
+         width: 1rem;
+         height: 1rem;
+         border-radius: .5rem;
+         border: .08rem solid #0080C1;
+         padding-top:5%;
+      }
+      .img-center{
+         width: 90%;
+         height: .7rem;
+         margin-left: 5%;
+         margin-top: 2%;
+      }
+      .bot-box{
+         width: 100%;
+         text-align: center;
+      }
+      .img-scan{
+         width: 1.6rem;
+         height: 1.4rem;
+      }
+      .bot-tel{
+         font-size: .16rem;
+         color: #FF0000;
+         font-weight: bold;
+
+      }
+      .bot-link{
+         font-size: .16rem;
+         font-weight: bold;
+         color: #0080C1;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="app">
+      <img src="./img/banner.png" class="img-top" />
+      <p>i分期是北京银行针对我行信用卡持卡人量身定制的分期业务。</p>
+      <div class="circle-box">
+         <div class="circle-left"><div><span>自在</span>消费</div><div>助力<span>梦想</span></div></div>
+         <div class="circle-left"><div><span>美好</span>生活</div><div>面面<span>俱到</span></div></div>
+      </div>
+      <img src="./img/fenqi.png" class="img-center"/>
+      <div class="bot-box">
+         <img src="./img/scan.png" class="img-scan"/>
+         <div class="bot-tel">SYX55-010266</div>
+         <div onclick="goApply()" class="bot-link">扫码立即申请</div>
+      </div> 
+   </div>
+   <script>
+      function goApply() {
+         // window.location.href = "https://apple.agenric.cn/";
+         // window.history.go("text.html");
+         window.location.href = "apply.html"
+      }
+
+   </script>
+</body>
+
+</html>

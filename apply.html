@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+   <title>申请企业</title>
+   <style type="text/css">
+      * {
+         padding: 0rem;
+         margin: 0rem;
+      }
+
+      html {
+         /*谷歌浏览器写62.5%会有一点兼容问题..为了谷歌.改一下倍率吧.*/
+         font-size: 625%;
+         font-family: "微软雅黑";
+      }
+
+      body {
+         /*其实就当16px这么用了.因为设置了625%直接减去两位就可以按px方法做了
+           1rem = 100px
+         */
+         font-size: .16rem;
+      }
+
+      div {
+         /*box-sizing:border-box;设置了边框也没有把DIV变大,太棒了~*/
+         box-sizing: border-box;
+      }
+
+      .container {
+         background-color: #F9F9F9;
+         /* padding: .2rem 2%; */
+         font-size: .2rem;
+      }
+
+      .title {
+         padding: .15rem .15rem;
+      }
+
+      .input-box {
+         background-color: #fff;
+      }
+
+      .input-item {
+         width: 100%;
+         height: .6rem;
+         border-bottom: .01rem solid #DCDCDC;
+         padding: .15rem .15rem;
+         display: flex;
+         justify-content: space-between;
+      }
+
+      input {
+         font-size: .2rem;
+         border: none;
+         width: 60%;
+      }
+
+      .select {
+         width: 60%;
+         font-size: .2rem;
+      }
+
+      .bot-btn {
+         width: 90%;
+         height: .5rem;
+         line-height: .5rem;
+         position: fixed;
+         bottom: .3rem;
+         text-align: center;
+         font-size: .2rem;
+         color: #fff;
+         background-color: #D7181F;
+         border: none;
+         border-radius: .05rem;
+         margin-left: 5%;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="app">
+      <div class="container">
+         <div class="title">请填写公司信息</div>
+         <div class="input-box">
+            <div class="input-item">
+               <label for="cname">公司名称</label>
+               <input name="cname" id="cname" placeholder="请输入公司名称" />
+            </div>
+            <div class="input-item">
+               <label for="code">组织机构编码</label>
+               <input id="code" name="code" placeholder="机构编码" />
+            </div>
+            <div class="input-item">
+               <label>企业类型</label>
+               <select class="select" id="myselect">
+                  <option value="0">合资</option>
+                  <option value="1">独资</option>
+                  <option value="2">国有</option>
+                  <option value="3">私营</option>
+               </select>
+            </div>
+            <div class="input-item">
+               <label for="pname">法人姓名</label>
+               <input name="pname" id="pname" placeholder="请输入法人姓名" />
+            </div>
+            <div class="input-item">
+               <label for="tel">电话</label>
+               <input name="tel" id="tel" type="tel" placeholder="请输入电话" />
+            </div>
+            <div class="input-item">
+               <label for="address">住址</label>
+               <input for="address" id="address" placeholder="请输入住址" />
+            </div>
+         </div>
+         <button onclick="next()" class="bot-btn" type="submit">下一步</button>
+      </div>
+   </div>
+   <script>
+      function next() {
+         if (checkUser()) {
+            //
+            alert('提交成功！');
+         }
+      }
+      function checkUser() {
+         var cname = document.getElementById("cname").value;
+         if (cname && cname.length > 3 && cname.length < 41) {
+            var code = document.getElementById("code").value;
+            if (code && code.length > 3 && code.length < 41) {
+               var type = document.getElementById("myselect").value;
+               if (type) {
+                  var pname = document.getElementById("pname").value;
+                  if (pname && pname.length > 1 && pname.length < 20) {
+                     var tel = document.getElementById("tel").value;
+                     var reg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
+                     if (reg.test(tel)) {
+                        var address = document.getElementById("address").value;
+                        if (address && address.length > 7 && address.length < 51) {
+                           return true;
+                        } else {
+                           alert('地址为8到50位字符！');
+                           return false;
+                        }
+                     } else {
+                        alert('电话格式不正确！');
+                        return false;
+                     }
+                  } else {
+                     alert('法人姓名为2到20位字符！');
+                     return false;
+                  }
+               } else {
+                  return false;
+               }
+            } else {
+               alert('组织机构编码为4-50字符！');
+               return false;
+            }
+         } else {
+            alert('公司名称为4-50字符！');
+            return false;
+         }
+      }
+
+   </script>
+</body>
+
+</html>
