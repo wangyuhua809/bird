@@ -41,6 +41,10 @@
          box-sizing: border-box;
       }
 
+      .label-item {
+         width: 40%;
+      }
+
       .select {
          width: 60%;
          font-size: .2rem;
@@ -69,15 +73,15 @@
       <div class="title">请填写公司信息</div>
       <div class="input-box">
          <div class="item-box">
-            <label for="cname">公司名称</label>
+            <label class="label-item" for="cname">公司名称</label>
             <input class="input-item" name="cname" id="cname" placeholder="请输入公司名称" />
          </div>
          <div class="item-box">
-            <label for="code">组织机构编码</label>
+            <label class="label-item" for="code">组织机构编码</label>
             <input class="input-item" id="code" name="code" placeholder="机构编码" />
          </div>
          <div class="item-box">
-            <label>企业类型</label>
+            <label class="label-item">企业类型</label>
             <select class="select" id="myselect">
                <option value="0">合资</option>
                <option value="1">独资</option>
@@ -86,15 +90,15 @@
             </select>
          </div>
          <div class="item-box">
-            <label for="pname">法人姓名</label>
+            <label class="label-item" for="pname">法人姓名</label>
             <input class="input-item" name="pname" id="pname" placeholder="请输入法人姓名" />
          </div>
          <div class="item-box">
-            <label for="tel">电话</label>
+            <label class="label-item" for="tel">电话</label>
             <input class="input-item" name="tel" id="tel" type="tel" maxlength="11" placeholder="请输入电话" />
          </div>
          <div class="item-box">
-            <label for="address">住址</label>
+            <label class="label-item" for="address">住址</label>
             <input class="input-item" for="address" id="address" placeholder="请输入住址" />
          </div>
       </div>
