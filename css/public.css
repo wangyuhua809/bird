@@ -1,0 +1,13 @@
+html,
+body,
+div,
+input,
+select,
+label,
+span,
+p,
+img,
+option {
+   padding: 0;
+   margin: 0;
+}
