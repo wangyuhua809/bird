@@ -6,7 +6,7 @@
    <meta name="viewport"
       content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
    <title>扫码申请企业</title>
-   <link type="text/css" rel="styleSheet" href="./css/public.css" />
+   <link type="text/css" rel="styleSheet" href="./css/base.css" />
    <style type="text/css">
       .img-top {
          width: 100%;
@@ -92,14 +92,17 @@
 
       .bottom-position1 {
          bottom: 4.6rem;
+         border: .08rem solid #FF0000;
       }
 
       .bottom-position2 {
          bottom: 4rem;
+         border: .08rem solid #0080C1;
       }
 
       .bottom-position3 {
          bottom: 3.4rem;
+         border: .08rem solid #000;
       }
    </style>
 </head>
@@ -107,11 +110,11 @@
 <body>
    <div class="home-container">
       <button class="change-top-banner bottom-position1"
-         onclick="changeBanner('./img/red-banner.jpg','.08rem solid #FF0000')">1</button>
+         onclick="handleChangeBanner('./img/red-banner.jpg','.08rem solid #FF0000')">1</button>
       <button class="change-top-banner bottom-position2"
-         onclick="changeBanner('./img/blue-banner.jpg','.08rem solid #0080C1')">2</button>
+         onclick="handleChangeBanner('./img/blue-banner.jpg','.08rem solid #0080C1')">2</button>
       <button class="change-top-banner bottom-position3"
-         onclick="changeBanner('./img/black-banner.jpg','.08rem solid #000')">3</button>
+         onclick="handleChangeBanner('./img/black-banner.jpg','.08rem solid #000')">3</button>
       <img src="./img/banner.png" id="imgtop" class="img-top">
       <p class="detail">i分期是北京银行针对我行信用卡持卡人量身定制的分期业务。</p>
       <div class="circle-box">
@@ -136,9 +139,9 @@
       </div>
    </div>
    <!--引入rem适配-->
-   <script src="./js/adaptaion.js"></script>
+   <script src="./js/adaptation.js"></script>
    <script>
-      function changeBanner(type, color) {
+      function handleChangeBanner(type, color) {
          document.getElementById('imgtop').src = type;
          document.getElementById('circleItem1').style.border = color;
          document.getElementById('circleItem2').style.border = color;
